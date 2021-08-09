@@ -12,6 +12,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // run when a client connects
 io.on("connection", (socket) => {
   console.log("new web socket connection.");
+
+  socket.emit("message", "Welcome to ChatCord!");
 });
 
 const PORT = process.env.PORT || 3000;
