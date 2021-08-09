@@ -6,7 +6,12 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 const formatMessage = require("./utils/messages");
-const { userJoin, getCurrentUser } = require("./utils/users");
+const {
+  userJoin,
+  getCurrentUser,
+  userLeave,
+  getRoomUsers,
+} = require("./utils/users");
 
 // set static folder
 app.use(express.static(path.join(__dirname, "public")));
