@@ -24,7 +24,7 @@ io.on("connection", (socket) => {
 
   // listen for chat message
   socket.on("chatMessage", (msg) => {
-    console.log(msg);
+    io.emit("message", msg);
   });
 });
 
